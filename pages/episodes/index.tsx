@@ -3,8 +3,13 @@ import type {CharacterType, ResponseType} from "../../assets/api/rick-and-morty-
 import {PageWrapper} from "../../components/PageWrapper/PageWrapper";
 import {Card} from "../../components/Card/Card";
 import {getLayout} from "../../components/Layout/Layout";
+import type {GetStaticProps} from "next";
 
-export const getServerSideProps = async () => {
+export const getServerSideProps:GetStaticProps = async ({ revalidateReason}) => {
+
+
+
+
     const episodes = await API.rickAndMorty.getEpisodes();
     if(!episodes){
        return  {
