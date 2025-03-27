@@ -5,7 +5,7 @@ import {Card} from "../../components/Card/Card";
 import {getLayout} from "../../components/Layout/Layout";
 import type {GetStaticProps} from "next";
 
-export const getServerSideProps:GetStaticProps = async ({ revalidateReason}) => {
+export const getServerSideProps:GetStaticProps = async ({ }) => {
 
 
 
@@ -32,7 +32,7 @@ const Episodes = ({episodes}:Props) => {
     const episodesList = episodes.results.map(character => <Card name={character.name} key={character.id} />)
 
     return  <PageWrapper>
-       {/* <Header/>*/}
+
         {episodesList && episodesList}
     </PageWrapper>
 };
